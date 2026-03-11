@@ -11,8 +11,8 @@ function CategoryItem(props)
             <p>{strCategory}</p>
             <p>{strCategoryDescription}</p>
             <div className='card-action'>
-                <Link to='/Meals'>{strCategory}</Link>
-                <a href={strCategory}>Watch category</a>
+                <Link to={`/meals/${strCategory}`}>{strCategory}</Link>
+                {/* <a href={strCategory}>Watch category</a> */}
             </div>
         </div>
     )

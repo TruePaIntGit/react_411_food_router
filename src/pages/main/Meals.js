@@ -1,17 +1,20 @@
 import './Meals.css';
+import { useParams } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import { getFilteredCategory } from '../../api';
 import MealList from '../../components/MealList';
 
-function Meals(selectedCategory){
+function Meals(){
+    const { category } = useParams();
+    console.log(category);
     const [catalog, setCatalog] = useState([]);
     useEffect
     (
         () =>
         {
-            getFilteredCategory(selectedCategory).then((data)=>{setCatalog(data.meals);});
+            getFilteredCategory(category).then((data)=>{setCatalog(data.meals);});
         },
-        []
+        [category]
     );
     return(
         <div className='wrap'>

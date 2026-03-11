@@ -10,7 +10,7 @@ import NotFound from './pages/main/NotFound';
 import Meals from './pages/main/Meals';
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('Beef');
+  //const [selectedCategory, setSelectedCategory] = useState('Beef');
   const text =
   {
     title: "Welcome  to The MealDB",
@@ -24,7 +24,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About text={text} />} />
           <Route path="contacts" element={<Contacts />} />
-          <Route path='meals' element={<Meals selectedCategory={selectedCategory} />}></Route>
+          <Route path='meals/:category' element={<Meals />} />
           <Route path="*" element={<NotFound />} />
 
         </Route>
