@@ -10,7 +10,6 @@ function Layout()
             <Header />
             <main className='content'>
                 <Outlet />
-                {/* отображает дочерние маршруты в родительском компоненте */}
             </main>
             <Footer />
         </div>

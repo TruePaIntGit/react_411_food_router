@@ -6,7 +6,7 @@ function Header()
     return(
         <div className='header'>
             <div className='wrap'>
-                <div className='logo'><Link to="/">food</Link></div>
+                <div className='logo'><Link to="/">Food</Link></div>
                 <div className='right'>
                     <ul>
                         <li><Link to="/about">About</Link></li>
@@ -14,6 +14,7 @@ function Header()
                     </ul>
                 </div>
             </div>
+            
         </div>
     )
 }

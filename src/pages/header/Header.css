@@ -1,11 +1,6 @@
 .right > ul
 {
-    font-size: 19px;
     list-style: none;
-    display:flex;
+    display: flex;
     justify-content: space-around;
-}
-.logo
-{
-    font-size: 19px;
 }

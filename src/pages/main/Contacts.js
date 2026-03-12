@@ -4,8 +4,8 @@ function Contacts()
 {
     const text=
     {
-        title: "Contact",
-        description: "Email: abobaMaster@gmail.com"
+        title:"Contact",
+        description:"E-mail:thedatadb@gmail.com"
     }
     return(
         <div className='wrap'>

@@ -1,16 +1,19 @@
+import Meal from './Meal';
 import './MealList.css';
-import MealItem from './MealItem';
 
-function MealList({catalog = []}){
+function MealList({meals})
+{
     return(
         <div className='list'>
             {
-                catalog.map
+                meals.map
                 (
-                    el => (<MealItem key={el.idMeal} {...el} />)
+                    meal =>
+                    (
+                        <Meal key={meal.idMeal} {...meal} />
+                    )
                 )
             }
-
         </div>
     )
 }
