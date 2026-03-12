@@ -2,16 +2,26 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './Recipe.css';
 import { useEffect, useState } from 'react';
 import { getMealById } from '../api';
+import Preloader from './Preloader/Preloader';
 
 function Recipe()
 {
+    const [loading, setLoading] = useState(true);
     const {id} = useParams();
     const [recipe,setRecipe] = useState({});
     const navigate = useNavigate();
     let goBack = () => navigate(-1);
 
-    useEffect(() => {getMealById(id).then((data) => setRecipe(data.meals[0]))}, [id]);
+    useEffect(() => {
+        setLoading(true);
+        getMealById(id).then((data) => setRecipe(data.meals[0])).
+        finally(()=>{
+            setLoading(false);
+        })}, [id]);
 
+    if (loading){
+        return <Preloader fullScreen={false} text="Loading recipe..." />;
+    }
     return(
         <div className='wrap'>
             <div className='recipe'>

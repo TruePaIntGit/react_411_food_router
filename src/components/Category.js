@@ -3,21 +3,29 @@ import './Category.css';
 import { useEffect, useState } from 'react';
 import { getFilteredCategory } from '../api';
 import MealList from './MealList';
+import Preloader from './Preloader/Preloader';
 
 function Category()
 {
     const {name} = useParams();
     const [meals, setMeals] = useState([]);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     let goBack = () => navigate(-1);
     useEffect
     (
         () => 
         {
-            getFilteredCategory(name).then(data => setMeals(data.meals));
+            setLoading(true);
+            getFilteredCategory(name).then(data => setMeals(data.meals))
+            .finally(() => {
+                setLoading(false); // 👈 выключаем прелоадер
+            });
         },[name]
     );
-
+    if (loading) {
+        return <Preloader fullScreen={true} text="Loading meals..." />;
+    }
     return (
         <div className='wrap'>
             <MealList meals={meals} />
