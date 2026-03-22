@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Meal from './Meal';
 import './MealList.css';
 

@@ -1,3 +1,29 @@
+.header
+{
+    background-color: #FF7700;
+    padding: 0 18px;
+}
+.header a
+{
+    color: aliceblue;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.header .wrap, .header > .wrap > .right
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right
+{
+    width: 30%;
+}
+.right > ul
+{
+    width: 100%;
+}
 .right > ul
 {
     list-style: none;
