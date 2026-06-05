@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Yandex(){
     const htmlContent =`<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
