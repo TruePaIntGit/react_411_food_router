@@ -8,8 +8,6 @@ import Contacts from './pages/main/Contacts';
 import NotFound from './pages/main/NotFound';
 import Category from './components/Category';
 import Recipe from './components/Recipe';
-import Yandex from './components/Yandex';
-import { YMInitializer } from 'react-yandex-metrika';
 
 function App() {
   
@@ -20,8 +18,6 @@ function App() {
   }
   return (
     <div className="App">
-      <YMInitializer  accounts={[109680357]}/>
-      <Yandex/>
       <Routes>
         <Route path="/" element={<Layout />}>
 
