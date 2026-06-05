@@ -8,8 +8,10 @@ import Contacts from './pages/main/Contacts';
 import NotFound from './pages/main/NotFound';
 import Category from './components/Category';
 import Recipe from './components/Recipe';
+import Yandex from './components/Yandex';
 
 function App() {
+  
   const text=
   {
     title:"Welcome to The MealDB",
@@ -17,11 +19,12 @@ function App() {
   }
   return (
     <div className="App">
+      <Yandex/>
       <Routes>
         <Route path="/" element={<Layout />}>
 
           <Route index element={<Home />} />
-          <Route path="about" element={<About text={text} />} />
+          <Route path="aboutt" element={<About text={text} />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="category/:name" element={<Category />} />
           <Route path="meal/:id" element={<Recipe />}/>
